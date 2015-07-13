@@ -1,0 +1,77 @@
+<p>﻿—
+layout: post
+category : 学习
+tags : [python]
+—
+#《python核心编程》学习（1）</p>
+
+<h2 id="section">输出</h2>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno">1</span> <span class="k">print</span> <span class="s">&quot;hello world&quot;</span>
+<span class="lineno">2</span> <span class="k">print</span> <span class="s">&quot;</span><span class="si">%s%d</span><span class="s">&quot;</span><span class="o">%</span><span class="p">(</span><span class="s">&quot;hello world&quot;</span> <span class="p">,</span><span class="mi">1</span><span class="p">)</span></code></pre></div>
+
+<h3 id="section-1">输出重定向到文件</h3>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno">1</span> <span class="nb">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&#39;path&#39;</span><span class="p">,</span><span class="s">&#39;a&#39;</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="k">print</span> <span class="o">&gt;&gt;</span> <span class="nb">file</span> <span class="p">,</span> <span class="s">&#39;something&#39;</span>
+<span class="lineno">3</span> <span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></code></pre></div>
+
+<h2 id="section-2">输入</h2>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno">1</span> <span class="nb">raw_input</span><span class="p">()</span></code></pre></div>
+
+<h2 id="section-3">基本数字类型</h2>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno">1</span> <span class="nb">int</span> 
+<span class="lineno">2</span> <span class="nb">long</span> 
+<span class="lineno">3</span> <span class="nb">bool</span>
+<span class="lineno">4</span> <span class="nb">float</span>
+<span class="lineno">5</span> <span class="nb">complex</span> <span class="c">#（复数）</span></code></pre></div>
+
+<p>注意长整型的范围和C语言不同，类似与JAVA中的BigInteger.</p>
+
+<h2 id="section-4">列表</h2>
+<p>相当于C语言中的数组。</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno">1</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)]</span> <span class="c">#申请长度为n的数组并且置为0</span>
+<span class="lineno">2</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[([</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">n</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">m</span><span class="p">)]</span><span class="c">#申请大小为n * m的数组并且置为0</span></code></pre></div>
+
+<p>同理各维数组。</p>
+
+<h2 id="section-5">字典</h2>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno">1</span> <span class="n">Dict</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;host&#39;</span> <span class="p">:</span> <span class="s">&#39;localhost&#39;</span><span class="p">}</span> <span class="c"># 创建字典</span>
+<span class="lineno">2</span> <span class="n">Dict</span><span class="p">[</span><span class="s">&#39;port&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">80</span> <span class="c">#加入字典</span></code></pre></div>
+
+<h2 id="section-6">语句</h2>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno">1</span> <span class="k">if</span><span class="err">……</span><span class="k">elif</span><span class="err">……</span><span class="k">else</span>
+<span class="lineno">2</span> <span class="k">while</span>
+<span class="lineno">3</span> <span class="k">for</span>
+<span class="lineno">4</span> <span class="k">try</span><span class="err">……</span><span class="k">except</span><span class="err">……</span><span class="k">else</span></code></pre></div>
+
+<h2 id="section-7">文件</h2>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno">1</span> <span class="n">handle</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">file_name</span> <span class="p">,</span> <span class="n">access_mode</span> <span class="o">=</span> <span class="s">&#39;r&#39;</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="c">#access_mode 中，为&#39;r&#39;是读取，&#39;w&#39;是写入,&#39;a&#39;为添加,&#39;+&#39;为读写，&#39;b&#39;为二进制访问。默认值是&#39;r&#39; 。</span>
+<span class="lineno">3</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="nb">file</span> <span class="p">:</span>
+<span class="lineno">4</span> 	<span class="k">print</span> <span class="n">line</span> <span class="p">,</span>
+<span class="lineno">5</span> <span class="nb">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></code></pre></div>
+
+<p>上面使用了逗号来抑制自动生成的换行</p>
+
+<h2 id="section-8">函数</h2>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno">1</span> <span class="k">def</span> <span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span>
+<span class="lineno">2</span> 	<span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span></code></pre></div>
+
+<h2 id="section-9">类</h2>
+<p>……(留坑)</p>
+
+<h2 id="section-10">内存分配</h2>
+<p>引用计数</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="lineno">1</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="lineno">2</span> <span class="n">y</span> <span class="o">=</span> <span class="n">x</span></code></pre></div>
+
+<p>x=3.14创建了一个对象并且把值赋给x，此时y并没用创建对象，而只是对该对象的引用计数增加1。</p>
