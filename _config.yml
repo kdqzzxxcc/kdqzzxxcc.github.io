@@ -1,4 +1,5 @@
 # Site settings
+permalink: /:year/:month/:day/:title.html
 title: Kdqzzxxcc
 email: kongdq1992@gmail.com
 description: Just Do It
